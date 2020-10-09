@@ -31,6 +31,13 @@ app.message('hello', async ({ message, say }) => {
   });
 });
 
+// this function activates once the user clicks 'Click Me'
+app.action('button_click', async ({ body, ack, say }) => {
+  // Acknowledge the action
+  await ack();
+  await say(`<@${body.user.id}> clicked the button! 🔥`);
+});
+
 (async () => {
   // start your app
   await app.start(process.env.PORT || 3015);
