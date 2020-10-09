@@ -6,7 +6,11 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
-(async () => {
+// Listens to incoming messages the contain "hello"
+app.message('hello', async ({ message, say }) => {
+  // say() sends a message to the channel where the event was triggered
+  await say(`Hey there <@${message.user}>! 🤗`);
+})(async () => {
   // start your app
   await app.start(process.env.PORT || 3015);
 
