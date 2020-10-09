@@ -2,7 +2,7 @@
   "name": "blissbot",
   "version": "1.0.0",
   "description": "Slack bot to notify IT when you need new software",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ."
