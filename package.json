@@ -1,0 +1,22 @@
+{
+  "name": "blissbot",
+  "version": "1.0.0",
+  "description": "Slack bot to notify IT when you need new software",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/antdke/blissbot.git"
+  },
+  "author": "Anthony Diké",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/antdke/blissbot/issues"
+  },
+  "homepage": "https://github.com/antdke/blissbot#readme",
+  "dependencies": {
+    "@slack/bolt": "^2.4.1"
+  }
+}
