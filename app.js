@@ -10,7 +10,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
   // Acknowledge command request
   await ack();
 
-  await say('${command.text}!! 🌸');
+  await say(`${command.text}!! 🌸``);
 });
 
 (async () => {
