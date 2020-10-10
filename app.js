@@ -11,6 +11,8 @@ app.command('/bliss', async ({ command, ack, say }) => {
   await ack();
 
   await say({
+    type: 'modal',
+    callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
       text: 'BlissBot',
@@ -21,7 +23,6 @@ app.command('/bliss', async ({ command, ack, say }) => {
       text: 'Submit',
       emoji: true,
     },
-    type: 'modal',
     close: {
       type: 'plain_text',
       text: 'Cancel',
