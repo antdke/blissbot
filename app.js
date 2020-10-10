@@ -33,6 +33,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
     blocks: [
       {
         type: 'input',
+        block_id: 'app-request-form-title',
         element: {
           type: 'plain_text_input',
           action_id: 'plain_text_input-action',
@@ -45,6 +46,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'context',
+        block_id: 'app-request-form-context',
         elements: [
           {
             type: 'plain_text',
@@ -55,6 +57,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'input',
+        block_id: 'is-this-critical-radio-buttons',
         element: {
           type: 'radio_buttons',
           options: [
@@ -85,6 +88,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'input',
+        block_id: 'who-will-manage-this',
         element: {
           type: 'multi_users_select',
           placeholder: {
@@ -102,6 +106,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'context',
+        block_id: 'who-will-manage-this-context',
         elements: [
           {
             type: 'plain_text',
@@ -113,6 +118,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'input',
+        block_id: 'convince-me-textarea',
         element: {
           type: 'plain_text_input',
           multiline: true,
@@ -126,6 +132,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       },
       {
         type: 'context',
+        block_id: 'convince-me-textarea-context',
         elements: [
           {
             type: 'plain_text',
