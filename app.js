@@ -11,11 +11,9 @@ app.command('/bliss', async ({ command, ack, say }) => {
   await ack();
 
   await say({
-    type: 'modal',
-    callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
-      text: 'Just a modal',
+      text: 'BlissBot',
       emoji: true,
     },
     submit: {
@@ -23,6 +21,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
       text: 'Submit',
       emoji: true,
     },
+    type: 'modal',
     close: {
       type: 'plain_text',
       text: 'Cancel',
@@ -30,20 +29,107 @@ app.command('/bliss', async ({ command, ack, say }) => {
     },
     blocks: [
       {
-        type: 'section',
-        block_id: 'section-identifier',
-        text: {
-          type: 'mrkdwn',
-          text: '*Welcome* to ~my~ Block Kit _modal_!',
+        type: 'input',
+        element: {
+          type: 'plain_text_input',
+          action_id: 'plain_text_input-action',
         },
-        accessory: {
-          type: 'button',
-          text: {
+        label: {
+          type: 'plain_text',
+          text: 'App/Service Name',
+          emoji: true,
+        },
+      },
+      {
+        type: 'context',
+        elements: [
+          {
             type: 'plain_text',
-            text: 'Just a button',
+            text: 'Ex: "Notion", "HubSpot", "AWS", etc.',
+            emoji: true,
           },
-          action_id: 'button-identifier',
+        ],
+      },
+      {
+        type: 'input',
+        element: {
+          type: 'radio_buttons',
+          options: [
+            {
+              text: {
+                type: 'plain_text',
+                text: 'Yes',
+                emoji: true,
+              },
+              value: 'value-0',
+            },
+            {
+              text: {
+                type: 'plain_text',
+                text: 'No',
+                emoji: true,
+              },
+              value: 'value-1',
+            },
+          ],
+          action_id: 'radio_buttons-action',
         },
+        label: {
+          type: 'plain_text',
+          text: 'Is this critical to your job?',
+          emoji: true,
+        },
+      },
+      {
+        type: 'input',
+        element: {
+          type: 'multi_users_select',
+          placeholder: {
+            type: 'plain_text',
+            text: 'Select users',
+            emoji: true,
+          },
+          action_id: 'multi_users_select-action',
+        },
+        label: {
+          type: 'plain_text',
+          text: 'Who will manage this?',
+          emoji: true,
+        },
+      },
+      {
+        type: 'context',
+        elements: [
+          {
+            type: 'plain_text',
+            text:
+              'Point of contact for IT to ask if they should renew or terminate the service.',
+            emoji: true,
+          },
+        ],
+      },
+      {
+        type: 'input',
+        element: {
+          type: 'plain_text_input',
+          multiline: true,
+          action_id: 'plain_text_input-action',
+        },
+        label: {
+          type: 'plain_text',
+          text: "Convince me it's worth the money",
+          emoji: true,
+        },
+      },
+      {
+        type: 'context',
+        elements: [
+          {
+            type: 'plain_text',
+            text: 'Briefly explain why we should spend $ on this?',
+            emoji: true,
+          },
+        ],
       },
     ],
   });
