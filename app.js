@@ -11,56 +11,30 @@ app.command('/bliss', async ({ command, ack, say }) => {
   await ack();
 
   await say({
+    type: 'modal',
+    callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
-      text: 'Modal Title',
-    },
-    submit: {
-      type: 'plain_text',
-      text: 'Submit',
+      text: 'Just a modal',
     },
     blocks: [
       {
-        type: 'input',
-        element: {
-          type: 'plain_text_input',
-          action_id: 'sl_input',
-          placeholder: {
+        type: 'section',
+        block_id: 'section-identifier',
+        text: {
+          type: 'mrkdwn',
+          text: '*Welcome* to ~my~ Block Kit _modal_!',
+        },
+        accessory: {
+          type: 'button',
+          text: {
             type: 'plain_text',
-            text: 'Placeholder text for single-line input',
+            text: 'Just a button',
           },
-        },
-        label: {
-          type: 'plain_text',
-          text: 'Label',
-        },
-        hint: {
-          type: 'plain_text',
-          text: 'Hint text',
-        },
-      },
-      {
-        type: 'input',
-        element: {
-          type: 'plain_text_input',
-          action_id: 'ml_input',
-          multiline: true,
-          placeholder: {
-            type: 'plain_text',
-            text: 'Placeholder text for multi-line input',
-          },
-        },
-        label: {
-          type: 'plain_text',
-          text: 'Label',
-        },
-        hint: {
-          type: 'plain_text',
-          text: 'Hint text',
+          action_id: 'button-identifier',
         },
       },
     ],
-    type: 'modal',
   });
 });
 
