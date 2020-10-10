@@ -16,6 +16,17 @@ app.command('/bliss', async ({ command, ack, say }) => {
     title: {
       type: 'plain_text',
       text: 'Just a modal',
+      emoji: true,
+    },
+    submit: {
+      type: 'plain_text',
+      text: 'Submit',
+      emoji: true,
+    },
+    close: {
+      type: 'plain_text',
+      text: 'Cancel',
+      emoji: true,
     },
     blocks: [
       {
