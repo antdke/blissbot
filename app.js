@@ -6,13 +6,13 @@ const app = new App({
 });
 
 // slash commad
-app.command('/bliss', async ({ command, ack, say, payload }) => {
+app.command('/bliss', async ({ command, ack, say, payload, body }) => {
   // Acknowledge command request
   await ack();
 
   await say({
     type: 'modal',
-    trigger_id: payload.trigger_id,
+    trigger_id: body.trigger_id,
     callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
