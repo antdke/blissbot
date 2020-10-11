@@ -5,6 +5,9 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
+const data = app.body;
+console.log(data);
+
 // slash commad
 app.command('/bliss', async ({ command, ack, say }) => {
   // Acknowledge command request
@@ -12,6 +15,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
 
   await say({
     type: 'modal',
+    trigger_id: trigger_id,
     callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
