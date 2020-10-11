@@ -5,8 +5,10 @@ const app = new App({
   signingSecret: process.env.SLACK_SIGNING_SECRET,
 });
 
-const data = app.body;
-console.log(data);
+data = app.post('/command', async (req, res) => {
+  const { trigger_id } = req.body;
+  const view = trigger_id;
+});
 
 // slash commad
 app.command('/bliss', async ({ command, ack, say }) => {
@@ -15,7 +17,7 @@ app.command('/bliss', async ({ command, ack, say }) => {
 
   await say({
     type: 'modal',
-    trigger_id: trigger_id,
+    trigger_id: data.view,
     callback_id: 'modal-identifier',
     title: {
       type: 'plain_text',
