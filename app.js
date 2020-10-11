@@ -28,14 +28,10 @@ app.command('/bliss', async ({ command, ack, payload, client }) => {
         submit: {
           type: 'plain_text',
           text: 'Submit',
-          emoji: true,
-          action_id: 'submit_button',
         },
         close: {
           type: 'plain_text',
           text: 'Cancel',
-          emoji: true,
-          action_id: 'close_button',
         },
         blocks: [
           {
